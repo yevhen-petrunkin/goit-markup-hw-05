@@ -26,7 +26,8 @@ body {
 h1,
 h2,
 h3,
-p {
+p,
+figure {
   padding: 0;
   margin: 0;
 }
@@ -114,6 +115,22 @@ p {
 .nav-links .link:hover,
 .nav-links .link:focus {
   color: var(--blue-color);
+}
+
+.link.active {
+  position: relative;
+}
+
+.link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 4px;
+  background-color: var(--blue-color);
+  border-radius: 2px;
 }
 
 .nav-link {
@@ -247,6 +264,25 @@ p {
 .activities-list img,
 .team-list img {
   display: block;
+}
+
+.activities-card {
+  position: relative;
+}
+
+.activities-title {
+  position: absolute;
+  bottom: 0px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white-color);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 .team {
