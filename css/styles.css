@@ -101,6 +101,7 @@ p {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-links .link {
@@ -299,6 +300,8 @@ p {
   height: 100%;
   border-radius: 50%;
   color: var(--media-icon-grey-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-member-link:hover,
@@ -337,6 +340,8 @@ p {
   color: var(--media-icon-grey-color);
   border: 1px solid var(--media-icon-grey-color);
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover,
@@ -372,6 +377,9 @@ p {
   line-height: 1.62;
   text-align: center;
   cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-list .main-btn {
@@ -383,10 +391,10 @@ p {
 .filter-list .bg-grey.active,
 .filter-list .bg-grey:hover,
 .filter-list .bg-grey:focus {
+  color: var(--white-color);
   background-color: var(--blue-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  color: var(--white-color);
 }
 
 /* Portfolio Projects */
@@ -429,6 +437,7 @@ p {
 
 .project-link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-link:hover,
@@ -487,6 +496,7 @@ p {
 
 .contact {
   color: var(--secondary-white-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Footer Links */
@@ -519,6 +529,7 @@ p {
   color: var(--white-color);
   background-color: var(--footer-white-color);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icons li:last-child {
