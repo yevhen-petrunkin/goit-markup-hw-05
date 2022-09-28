@@ -14,6 +14,8 @@
   /* Шрифти */
   --roboto: 'Roboto', sans-serif;
   --raleway: 'Raleway', sans-serif;
+
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -75,6 +77,12 @@ figure {
   overflow: hidden;
 }
 
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Header */
 .header-main {
   border-bottom: 1px solid #ececec;
@@ -102,7 +110,7 @@ figure {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--timing-function);
 }
 
 .nav-links .link {
@@ -194,7 +202,7 @@ figure {
   text-transform: uppercase;
 }
 
-.hero button {
+.hero-button {
   padding: 10px 32px;
   border-radius: 4px;
   border-color: transparent;
@@ -208,6 +216,53 @@ figure {
   text-align: center;
   letter-spacing: 0.06em;
   cursor: pointer;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 528px;
+  height: 521px;
+  background-color: var(--white-color);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--black-color);
+  background-color: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: border-color 250ms var(--timing-function), color 250ms var(--timing-function);
+  border-radius: 50%;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  color: var(--blue-color);
+  border-color: var(--blue-color);
+}
+
+.modal-close {
+  fill: currentColor;
 }
 
 /* Features */
@@ -336,8 +391,7 @@ figure {
   height: 100%;
   border-radius: 50%;
   color: var(--media-icon-grey-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
 
 .team-member-link:hover,
@@ -376,8 +430,7 @@ figure {
   color: var(--media-icon-grey-color);
   border: 1px solid var(--media-icon-grey-color);
   border-radius: 4px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--timing-function), border-color 250ms var(--timing-function);
 }
 
 .client-link:hover,
@@ -413,9 +466,8 @@ figure {
   line-height: 1.62;
   text-align: center;
   cursor: pointer;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
 
 .filter-list .main-btn {
@@ -469,7 +521,7 @@ figure {
 .project-link {
   display: block;
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .project-link:hover,
@@ -493,7 +545,7 @@ figure {
   color: var(--white-color);
   background-color: rgba(33, 150, 243, 0.9);
   display: inline-block;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms var(--timing-function);
 }
 
 .project-link:hover .project-descript,
@@ -556,7 +608,7 @@ figure {
 
 .contact {
   color: var(--secondary-white-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--timing-function);
 }
 
 /* Footer Links */
@@ -589,7 +641,7 @@ figure {
   color: var(--white-color);
   background-color: var(--footer-white-color);
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--timing-function);
 }
 
 .footer-icons li:last-child {
